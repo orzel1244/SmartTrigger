@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>components/CustomSpinBox.qml</file>
+        <file>components/CustomButton.qml</file>
+    </qresource>
+</RCC>
