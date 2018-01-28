@@ -14,7 +14,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp \
     class/Memory/memory.cpp \
-    class/TriggerBot/triggerbot.cpp
+    class/TriggerBot/triggerbot.cpp \
+    class/Offsets/offsets.cpp
 
 RESOURCES += qml.qrc
 
@@ -30,6 +31,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    class/Offsets/offsets.h \
     class/Memory/memory.h \
-    class/TriggerBot/triggerbot.h
+    class/TriggerBot/triggerbot.h \
+    class/Offsets/offsets.h

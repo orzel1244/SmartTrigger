@@ -29,15 +29,12 @@ ApplicationWindow {
                 CustomSpinBox {
                     id: delaySpinBox
                     anchors.verticalCenter: parent.verticalCenter
-                    value: 15
+                    value: 50
                     onValueChanged: {
                         triggerbot.setDelay(value)
                     }
-
-                    validator: IntValidator {
-                        bottom: 0
-                        top: 250
-                    }
+                    topValue: 350
+                    bottomValue: 0
                 }
                 Text {
                     text: "Delay before shooting (ms)"
@@ -66,10 +63,9 @@ ApplicationWindow {
                 CustomSpinBox {
                     id: spinBox2
                     anchors.verticalCenter: parent.verticalCenter
-                    validator: IntValidator {
-                        bottom: 0
-                        top: 250
-                    }
+                    value: 15
+                    topValue: 99
+                    bottomValue: 0
                     onValueChanged: {
                         triggerbot.setChance(value)
                     }

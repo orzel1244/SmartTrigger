@@ -3,6 +3,8 @@ import QtQuick.Controls 2.3
 
 SpinBox {
     id: control
+    property int topValue: 1045
+    property int bottomValue: 0
     contentItem: TextInput {
         z: 2
         text: control.textFromValue(control.value, control.locale)
@@ -15,9 +17,11 @@ SpinBox {
         selectedTextColor: "#ffffff"
         horizontalAlignment: Qt.AlignHCenter
         verticalAlignment: Qt.AlignVCenter
-
+        validator: IntValidator {
+            bottom: control.bottomValue
+            top: control.topValue
+        }
         readOnly: !control.editable
-        validator: control.validator
         inputMethodHints: Qt.ImhFormattedNumbersOnly
     }
 
@@ -62,7 +66,7 @@ SpinBox {
     }
 
     background: Rectangle {
-        implicitWidth: 140
+        implicitWidth: 165
         color: "#2c3e50"
         border.width: 2
         border.color: "#34495e"

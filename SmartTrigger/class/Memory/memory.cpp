@@ -34,6 +34,8 @@ DWORD Memory::getModule(char* ModuleName) {
     return 0;
 }
 
-void Memory::read(DWORD address, DWORD &value){
+DWORD Memory::read(DWORD address){
+    DWORD value;
     ReadProcessMemory(hProcess, (LPVOID)address, &value,sizeof(long),0);
+    return value;
 }

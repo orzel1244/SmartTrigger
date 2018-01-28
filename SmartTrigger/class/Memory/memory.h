@@ -12,7 +12,7 @@ public:
     Memory();
     void assignProcess();
     DWORD getModule(char* ModuleName);
-    void read(DWORD address, DWORD &value);
+    DWORD read(DWORD address);
 private:
     DWORD processId;
     HANDLE hProcess;
